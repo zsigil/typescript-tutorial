@@ -1,9 +1,12 @@
-const character = "luigi";
-console.log(character);
+let character = "mario"; //string
+let age = 30; //number
+let isBlackBelt = false; //boolean
 
-const inputs = document.querySelectorAll("input");
-console.log(inputs);
+// character = 8; won't work, because type is string
+character = "luigi"; //will work
 
-inputs.forEach((inp) => {
-  console.log(inp);
-});
+const circ = (diameter: number): number => {
+  return diameter * Math.PI;
+};
+
+console.log(circ(5));
