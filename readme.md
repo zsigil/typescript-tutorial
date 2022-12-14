@@ -8,6 +8,10 @@ https://www.npmjs.com/package/typescript
 
 `tsc sandbox.ts -w`
 
+after config
+
+`tsc -w`
+
 ### creating config file
 
 `tsc --init`
