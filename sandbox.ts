@@ -73,3 +73,11 @@ let ninjaTwo: {
 };
 
 // ninjaTwo = {} //won't work
+
+//! DYNAMIC TYPE
+//! only use if it is absolutely necessary
+
+let age3: any = 25;
+age3 = "hello"; //this is ok
+
+let mixed3: any[] = [];

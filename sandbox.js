@@ -53,3 +53,8 @@ ninjaOne = { name: "yoshi", age: 30 };
 ninjaOne = []; //!WORKS!!! arrays are objects
 var ninjaTwo;
 // ninjaTwo = {} //won't work
+//! DYNAMIC TYPE
+//! only use if it is absolutely necessary
+var age3 = 25;
+age3 = "hello"; //this is ok
+var mixed3 = [];
