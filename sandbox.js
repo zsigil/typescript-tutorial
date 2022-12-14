@@ -32,3 +32,24 @@ ninja = {
     belt: "orange",
     age: 30
 };
+//! EXPLICIT TYPES
+var character2;
+var age2;
+var isLoggedIn;
+// age2 = 'luigi' //not working
+//arrays
+var ninjas = []; //this will be an empty array
+//union types
+var mixed2 = [];
+mixed2.push("hello"); //ok
+mixed2.push(3); //ok
+// mixed2.push(true) //not ok
+var uid;
+uid = "123";
+uid = 23;
+//objects
+var ninjaOne;
+ninjaOne = { name: "yoshi", age: 30 };
+ninjaOne = []; //!WORKS!!! arrays are objects
+var ninjaTwo;
+// ninjaTwo = {} //won't work

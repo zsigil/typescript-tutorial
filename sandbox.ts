@@ -40,3 +40,36 @@ ninja = {
   belt: "orange",
   age: 30,
 };
+
+//! EXPLICIT TYPES
+let character2: string;
+let age2: number;
+let isLoggedIn: boolean;
+
+// age2 = 'luigi' //not working
+
+//arrays
+let ninjas: string[] = []; //this will be an empty array
+
+//union types
+let mixed2: (string | number)[] = [];
+mixed2.push("hello"); //ok
+mixed2.push(3); //ok
+// mixed2.push(true) //not ok
+
+let uid: string | number;
+uid = "123";
+uid = 23;
+
+//objects
+let ninjaOne: object;
+ninjaOne = { name: "yoshi", age: 30 };
+ninjaOne = []; //!WORKS!!! arrays are objects
+
+let ninjaTwo: {
+  name: string;
+  age: number;
+  beltColor: string;
+};
+
+// ninjaTwo = {} //won't work
