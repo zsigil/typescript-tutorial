@@ -1,8 +1,20 @@
 "use strict";
-//TYPE ALIASES
-const logDetails = (uid, item) => {
-    console.log(`${item} has a uid of ${uid}`);
+//FUNCTION SIGNATURES
+let greet;
+greet = (name, greeting) => {
+    console.log(`${greeting}, ${name}`);
 };
-const greet = (user) => {
-    console.log(`Hello, ${user.name}`);
+let calc;
+calc = (num1, num2, action) => {
+    if (action == "add") {
+        return num1 + num2;
+    }
+    else {
+        return num1 - num2;
+    }
+};
+let logDetails;
+logDetails = (ninja) => {
+    console.log(ninja.name);
+    console.log(ninja.age);
 };

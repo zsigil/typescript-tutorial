@@ -1,15 +1,28 @@
-//TYPE ALIASES
+//FUNCTION SIGNATURES
+let greet: (a: string, b: string) => void;
 
-type StringOrNum = string | number;
-type objWName = {
+greet = (name: string, greeting: string) => {
+  console.log(`${greeting}, ${name}`);
+};
+
+let calc: (a: number, b: number, c: string) => number;
+
+calc = (num1: number, num2: number, action: string) => {
+  if (action == "add") {
+    return num1 + num2;
+  } else {
+    return num1 - num2;
+  }
+};
+
+let logDetails: (obj: { name: string; age: number }) => void;
+
+type person = {
   name: string;
-  uid: StringOrNum;
+  age: number;
 };
 
-const logDetails = (uid: StringOrNum, item: string) => {
-  console.log(`${item} has a uid of ${uid}`);
-};
-
-const greet = (user: objWName) => {
-  console.log(`Hello, ${user.name}`);
+logDetails = (ninja: person) => {
+  console.log(ninja.name);
+  console.log(ninja.age);
 };
