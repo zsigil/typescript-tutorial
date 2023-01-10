@@ -22,3 +22,21 @@ form.addEventListener("submit", (e) => {
     }
     list.render(doc, type.value, "end");
 });
+//GENERICS
+//reusable blocks of code,that can be used with different types
+const addUID = (obj) => {
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+let doc1 = addUID({ name: "yoshi", age: 40 });
+console.log(doc1.name); // will not work without generic
+const doc3 = {
+    uid: 1,
+    resourceName: "person",
+    data: "mydata",
+};
+const doc4 = {
+    uid: 2,
+    resourceName: "yoshi",
+    data: ["string1"],
+};
