@@ -1,56 +1,6 @@
-//interfaces
-interface isPerson {
-  name: string;
-  age: number;
-  speak(a: string): void;
-  spend(a: number): number;
-}
-
-const me: isPerson = {
-  name: "Ildi",
-  age: 42,
-  speak(text: string): void {
-    console.log(text);
-  },
-  spend(amount: number): number {
-    return amount;
-  },
-};
-
-const greetPerson = (person: isPerson) => {
-  console.log("hello", person.name);
-};
-
-greetPerson(me);
-
-import { Invoice } from "./classes/Invoice";
-import { Payment } from "./classes/Payment";
-import { HasFormatter } from "./interfaces/HasFormatter";
-
-let doc1: HasFormatter;
-let doc2: HasFormatter;
-
-doc1 = new Invoice("yoshi", "webwork", 250);
-doc2 = new Payment("mario", "plumbing work", 200);
-
-let docs: HasFormatter[] = [];
-docs.push(doc1);
-docs.push(doc2);
-console.log(docs);
-
-const inv1 = new Invoice("Mario", "work on the Mario website", 2000);
-const inv2 = new Invoice("Thomas", "work on the Thomas website", 3400);
-
-let invoices: Invoice[] = [];
-invoices.push(inv1);
-invoices.push(inv2);
-
-//inv1.client = "yoshi"; // READONLY!
-
-invoices.forEach((inv) => {
-  //cannot access inv.details
-  console.log(inv.client, inv.amount, inv.format());
-});
+import { Invoice } from "./classes/Invoice.js";
+import { Payment } from "./classes/Payment.js";
+import { HasFormatter } from "./interfaces/HasFormatter.js";
 
 //using css class, typescript will not know if it is a form!=> type casting
 const form = document.querySelector(".new-item-form") as HTMLFormElement;
@@ -63,11 +13,11 @@ const amount = document.querySelector("#amount") as HTMLInputElement;
 
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
-  console.log(
-    type.value,
-    tofrom.value,
-    details.value,
-    amount.valueAsNumber,
-    typeof amount.valueAsNumber
-  );
+  let doc: HasFormatter;
+  if (type.value === "invoice") {
+    doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+  } else {
+    doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+  }
+  console.log(doc);
 });
