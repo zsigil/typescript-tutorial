@@ -12,7 +12,16 @@ const greetPerson = (person) => {
     console.log("hello", person.name);
 };
 greetPerson(me);
-import { Invoice } from "./classes/Invoice.js"; //.js when importing!!!
+import { Invoice } from "./classes/Invoice";
+import { Payment } from "./classes/Payment";
+let doc1;
+let doc2;
+doc1 = new Invoice("yoshi", "webwork", 250);
+doc2 = new Payment("mario", "plumbing work", 200);
+let docs = [];
+docs.push(doc1);
+docs.push(doc2);
+console.log(docs);
 const inv1 = new Invoice("Mario", "work on the Mario website", 2000);
 const inv2 = new Invoice("Thomas", "work on the Thomas website", 3400);
 let invoices = [];

@@ -23,7 +23,20 @@ const greetPerson = (person: isPerson) => {
 
 greetPerson(me);
 
-import { Invoice } from "./classes/Invoice.js"; //.js when importing!!!
+import { Invoice } from "./classes/Invoice";
+import { Payment } from "./classes/Payment";
+import { HasFormatter } from "./interfaces/HasFormatter";
+
+let doc1: HasFormatter;
+let doc2: HasFormatter;
+
+doc1 = new Invoice("yoshi", "webwork", 250);
+doc2 = new Payment("mario", "plumbing work", 200);
+
+let docs: HasFormatter[] = [];
+docs.push(doc1);
+docs.push(doc2);
+console.log(docs);
 
 const inv1 = new Invoice("Mario", "work on the Mario website", 2000);
 const inv2 = new Invoice("Thomas", "work on the Thomas website", 3400);
