@@ -18,11 +18,19 @@ const list = new ListTemplate(ul);
 
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
+
+  //has to be tuple
+  let values: [string, string, number] = [
+    tofrom.value,
+    details.value,
+    amount.valueAsNumber,
+  ];
+
   let doc: HasFormatter;
   if (type.value === "invoice") {
-    doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    doc = new Invoice(...values);
   } else {
-    doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    doc = new Payment(...values);
   }
   list.render(doc, type.value, "end");
 });
@@ -78,3 +86,14 @@ const doc5: ResourceTwo<string> = {
 };
 
 console.log(doc5); //0
+
+//tuples
+let arr = ["ryu", 2, true]; //any of these types can be in any position
+arr[0] = false; //ok
+arr[1] = "yoshi"; //ok
+arr = [30, false, "Bob"];
+
+//in tuple, type in that position cannot change
+
+let tup: [string, number, boolean] = ["ryu", 40, false];
+//tup[0] = false; // will not work
