@@ -40,3 +40,18 @@ const doc4 = {
     resourceName: "yoshi",
     data: ["string1"],
 };
+//ENUMS
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+const doc5 = {
+    uid: 1,
+    resourceType: ResourceType.BOOK,
+    data: "mydata",
+};
+console.log(doc5); //0

@@ -55,3 +55,26 @@ const doc4: Resource<string[]> = {
   resourceName: "yoshi",
   data: ["string1"],
 };
+
+//ENUMS
+enum ResourceType {
+  BOOK,
+  AUTHOR,
+  FILM,
+  DIRECTOR,
+  PERSON,
+}
+
+interface ResourceTwo<T> {
+  uid: number;
+  resourceType: ResourceType;
+  data: T;
+}
+
+const doc5: ResourceTwo<string> = {
+  uid: 1,
+  resourceType: ResourceType.BOOK,
+  data: "mydata",
+};
+
+console.log(doc5); //0
